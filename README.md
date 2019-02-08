@@ -1,3 +1,5 @@
+*This is me going throught the course below, if you stumbled acress this looking for the Data61 fp-course this isn't where you want to be. Read bwlow for more info.*
+
 # Functional Programming Course
 
 ![Haskell logo](https://haskell-lang.org/static/img/logo.png?etag=rJR84DMh)
