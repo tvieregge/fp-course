@@ -75,8 +75,7 @@ headOr ::
   a
   -> List a
   -> a
-headOr =
-  error "todo: Course.List#headOr"
+headOr = foldRight const
 
 -- | The product of the elements of a list.
 --
@@ -169,8 +168,7 @@ filter =
   List a
   -> List a
   -> List a
-(++) =
-  error "todo: Course.List#(++)"
+(++) l r = foldRight (:.) r l
 
 infixr 5 ++
 
@@ -265,8 +263,7 @@ find ::
   (a -> Bool)
   -> List a
   -> Optional a
-find =
-  error "todo: Course.List#find"
+find p = foldRight (\a o -> if p a then Full a else o) Empty
 
 -- | Determine if the length of the given list is greater than 4.
 --
@@ -301,8 +298,8 @@ lengthGT4 =
 reverse ::
   List a
   -> List a
-reverse =
-  error "todo: Course.List#reverse"
+reverse = foldLeft (flip (:.)) Nil
+-- folrRight (x xs -> xs ++ (x :. Nil)) Nil
 
 -- | Produce an infinite `List` that seeds with the given value at its head,
 -- then runs the given function for subsequent elements
