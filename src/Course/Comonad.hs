@@ -41,5 +41,4 @@ instance Comonad ExactlyOne where
   (a -> b)
   -> f a
   -> f b
-(<$$>) =
-  error "todo: Course.Comonad#(<$>)"
+(<$$>) f fa = error "TODO" --pure f <*> fa
